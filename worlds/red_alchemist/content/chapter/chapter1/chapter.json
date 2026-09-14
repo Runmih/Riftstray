@@ -1,0 +1,13 @@
+{
+  "id": "chapter1",
+  "next_location": "chapter1_complete",
+  "preparation": false,
+  "deployment": {
+    "player_selects": false,
+    "tiles": []
+  },
+  "map": "map.json",
+  "placements": "placements.json",
+  "objectives": "objectives.json",
+  "events": "events.json"
+}

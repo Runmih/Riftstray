@@ -1,0 +1,15 @@
+[gd_resource type="Resource" format=3 uid="uid://bp1npuxshnxja"]
+
+[ext_resource type="Script" uid="uid://elgwjlkrmyam" path="res://worlds/red_alchemist/system/gameplay/skills/skill_definition.gd" id="1"]
+[ext_resource type="Script" uid="uid://mi0py5c5xx0o" path="res://worlds/red_alchemist/system/gameplay/battle/chances/riposte_definition.gd" id="2"]
+
+[sub_resource type="Resource" id="Effect"]
+script = ExtResource("2")
+
+[resource]
+script = ExtResource("1")
+id = &"riposte"
+display_name = "Riposte"
+description = "After a dodge or a block that is not overpowered, Skill% chance to strike before the normal counterattack. Reactions cannot trigger reactions."
+riposte_effect = SubResource("Effect")
+category = &"kharazad_defense"

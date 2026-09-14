@@ -1,0 +1,23 @@
+[gd_resource type="Resource" load_steps=8 format=3]
+[ext_resource type="Script" path="res://worlds/red_alchemist/system/character/character_definition.gd" id="1"]
+[ext_resource type="Texture2D" path="res://worlds/red_alchemist/src/character/main/mihata/mihata.svg" id="2"]
+[ext_resource type="Resource" path="res://worlds/red_alchemist/system/gameplay/classes/kharazad/fighter.tres" id="3"]
+[ext_resource type="Resource" path="res://worlds/red_alchemist/content/items/iron_sword.tres" id="4"]
+[ext_resource type="Resource" path="res://worlds/red_alchemist/content/items/iron_shield.tres" id="5"]
+[ext_resource type="Resource" path="res://worlds/red_alchemist/content/items/bandage.tres" id="6"]
+[ext_resource type="Resource" path="res://worlds/red_alchemist/content/items/crimson_resolve.tres" id="Potion"]
+[resource]
+script = ExtResource("1")
+id = &"mihata"
+display_name = "Mihata Shirogane"
+faction = &"player"
+faction_color = Color(0.24, 0.57, 0.91, 1)
+sprite = ExtResource("2")
+base_attributes = {&"max_hp": 108, &"strength": 14, &"magic": 1, &"skill": 12, &"speed": 10, &"defense": 18, &"resistance": 3}
+default_level = 8
+level_cap = 10
+character_class = ExtResource("3")
+starting_items = Array[Resource]([ExtResource("4"), ExtResource("5"), ExtResource("6"), ExtResource("Potion")])
+starting_gear = {&"main_hand": &"iron_sword", &"off_hand": &"iron_shield"}
+selected_skills = {&"slot_1": &"brace", &"slot_2": &"intercept"}
+

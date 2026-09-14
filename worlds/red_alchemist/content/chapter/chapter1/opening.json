@@ -1,0 +1,7 @@
+{
+  "steps": [
+    {"type": "dialogue", "source": "res://worlds/red_alchemist/content/chapter/chapter1/dialogue/chapter1_opening.json"},
+    {"type": "casualty", "character": "courtesan_6", "attacker": "assassin_1"},
+    {"type": "dialogue", "source": "res://worlds/red_alchemist/content/chapter/chapter1/dialogue/chapter1_casualty.json"}
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "speakers": {
+    "mihata": {"name": "Mihata Shirogane", "portrait": ""},
+    "sophie": {"name": "Sophie", "portrait": ""}
+  },
+  "lines": [
+    {"speaker": "sophie", "text": "No! She was right behind us!"},
+    {"speaker": "mihata", "text": "Too slow. I can't protect both groups like this."},
+    {"speaker": "mihata", "text": "Crimson Resolve. A piece of my life for a little more time..."}
+  ]
+}

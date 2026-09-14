@@ -1,0 +1,17 @@
+[gd_resource type="Resource" format=3 uid="uid://vtvgmjbvyb8s"]
+
+[ext_resource type="Script" uid="uid://cmsu1kmleisrq" path="res://worlds/red_alchemist/system/gameplay/gear/gear_definition.gd" id="1"]
+[ext_resource type="Script" uid="uid://bpopbhl26kdjt" path="res://worlds/red_alchemist/system/gameplay/battle/attack_definition.gd" id="2"]
+
+[sub_resource type="Resource" id="Attack"]
+script = ExtResource("2")
+power = 6
+accuracy = 100.0
+weight = 2
+
+[resource]
+script = ExtResource("1")
+compatible_slots = Array[StringName]([&"main_hand"])
+attack = SubResource("Attack")
+id = &"pursuer_sword"
+display_name = "Pursuer Sword"

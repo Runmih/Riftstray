@@ -1,0 +1,117 @@
+[gd_scene format=3 uid="uid://dwuo1ychxkutc"]
+
+[ext_resource type="Script" uid="uid://c4qe2de4a1phg" path="res://worlds/red_alchemist/system/display/menu/start/start_menu.gd" id="1"]
+[ext_resource type="Resource" path="res://worlds/red_alchemist/content/interface/menu.tres" id="2"]
+[ext_resource type="FontFile" uid="uid://3cyitkw1d1q2" path="res://worlds/red_alchemist/src/font/CormorantSC-Bold.ttf" id="3_ytmtj"]
+[ext_resource type="FontFile" uid="uid://d1qwlab07pmns" path="res://worlds/red_alchemist/src/font/CormorantSC-Regular.ttf" id="4_kb0vd"]
+[ext_resource type="FontFile" uid="uid://1hifyf78nrk" path="res://worlds/red_alchemist/src/font/CormorantSC-Light.ttf" id="5_xjdf0"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xjdf0"]
+bg_color = Color(0.56078434, 0, 0.101960786, 0.5686275)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kb0vd"]
+content_margin_left = 20.0
+content_margin_right = 20.0
+bg_color = Color(0, 0, 0, 0.54901963)
+
+[sub_resource type="Theme" id="Theme_h5wfk"]
+default_font = ExtResource("4_kb0vd")
+Button/styles/focus = SubResource("StyleBoxFlat_xjdf0")
+Button/styles/normal = SubResource("StyleBoxFlat_kb0vd")
+
+[sub_resource type="FontVariation" id="FontVariation_8whv3"]
+base_font = ExtResource("3_ytmtj")
+
+[sub_resource type="FontVariation" id="FontVariation_kb0vd"]
+base_font = ExtResource("4_kb0vd")
+
+[sub_resource type="FontVariation" id="FontVariation_xjdf0"]
+base_font = ExtResource("4_kb0vd")
+
+[node name="StartMenu" type="CenterContainer" unique_id=379539565]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1")
+content = ExtResource("2")
+
+[node name="Column" type="VBoxContainer" parent="." unique_id=1231125705]
+layout_mode = 2
+theme = SubResource("Theme_h5wfk")
+theme_override_constants/separation = 18
+
+[node name="Title" type="Label" parent="Column" unique_id=267777486]
+visible = false
+layout_mode = 2
+tooltip_auto_translate_mode = 2
+theme_override_colors/font_color = Color(0.8352941, 0.627451, 0.49019608, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.38039216)
+theme_override_fonts/font = SubResource("FontVariation_8whv3")
+theme_override_font_sizes/font_size = 100
+text = "test
+"
+
+[node name="Subtitle" type="Label" parent="Column" unique_id=1500198062]
+visible = false
+layout_mode = 2
+horizontal_alignment = 1
+
+[node name="Space" type="Control" parent="Column" unique_id=678950558]
+custom_minimum_size = Vector2(0, 24)
+layout_mode = 2
+
+[node name="Play" type="Button" parent="Column" unique_id=305976767]
+custom_minimum_size = Vector2(0, 52)
+layout_mode = 2
+theme_override_fonts/font = SubResource("FontVariation_kb0vd")
+theme_override_font_sizes/font_size = 25
+text = "Select Chapter"
+
+[node name="Quit" type="Button" parent="Column" unique_id=237814626]
+custom_minimum_size = Vector2(0, 52)
+layout_mode = 2
+theme_override_fonts/font = SubResource("FontVariation_xjdf0")
+theme_override_font_sizes/font_size = 25
+text = "Exit Game"
+
+[node name="Back" type="Button" parent="Column" unique_id=1949783903]
+custom_minimum_size = Vector2(0, 48)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_xjdf0")
+theme_override_font_sizes/font_size = 25
+text = "Back to World Selection"
+
+[node name="Control" type="Control" parent="." unique_id=519289375]
+layout_mode = 2
+
+[node name="Title" type="Label" parent="Control" unique_id=405552014]
+layout_mode = 0
+offset_left = -368.0
+offset_top = -216.0
+offset_right = -264.0
+offset_bottom = -94.0
+tooltip_auto_translate_mode = 2
+theme_override_colors/font_color = Color(0.8352941, 0.627451, 0.49019608, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.38039216)
+theme_override_constants/shadow_offset_x = -4
+theme_override_constants/shadow_offset_y = 7
+theme_override_fonts/font = SubResource("FontVariation_8whv3")
+theme_override_font_sizes/font_size = 60
+text = "Red"
+
+[node name="Title2" type="Label" parent="Control" unique_id=2028731500]
+layout_mode = 0
+offset_left = -258.0
+offset_top = -209.0
+offset_right = 214.0
+offset_bottom = -87.0
+tooltip_auto_translate_mode = 2
+theme_override_colors/font_color = Color(0.8352941, 0.627451, 0.49019608, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.12156863)
+theme_override_constants/shadow_offset_x = -6
+theme_override_constants/shadow_offset_y = 6
+theme_override_fonts/font = SubResource("FontVariation_8whv3")
+theme_override_font_sizes/font_size = 100
+text = "Alchemist"

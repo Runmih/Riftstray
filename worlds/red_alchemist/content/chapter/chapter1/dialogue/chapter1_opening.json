@@ -1,0 +1,13 @@
+{
+  "speakers": {
+    "mihata": {"name": "Mihata Shirogane", "portrait": ""},
+    "sophie": {"name": "Sophie", "portrait": ""},
+    "enemy": {"name": "Noble Assassin", "portrait": ""}
+  },
+  "lines": [
+    {"speaker": "mihata", "text": "Run. Hurry up! I'll stop them."},
+    {"speaker": "sophie", "text": "There's too many!!!"},
+    {"speaker": "mihata", "text": "I said run."},
+    {"speaker": "enemy", "text": "Meat's back on the menu, boys."}
+  ]
+}

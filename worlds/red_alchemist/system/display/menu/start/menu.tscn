@@ -1,0 +1,71 @@
+[gd_scene format=3 uid="uid://bocjqvbli4x5y"]
+
+[ext_resource type="Script" uid="uid://dpnqxl8lkgwn" path="res://worlds/red_alchemist/system/display/menu/start/menu.gd" id="1"]
+[ext_resource type="PackedScene" uid="uid://dwuo1ychxkutc" path="res://worlds/red_alchemist/system/display/menu/start/start_menu.tscn" id="2"]
+[ext_resource type="Texture2D" uid="uid://chpsvrww44gwu" path="res://worlds/red_alchemist/system/display/menu/start/redalchemistmain.png" id="2_0lbo5"]
+[ext_resource type="PackedScene" path="res://worlds/red_alchemist/system/display/menu/start/modal/quit_dialog.tscn" id="4"]
+
+[ext_resource type="PackedScene" path="res://worlds/red_alchemist/system/display/new_game/new_game.tscn" id="5_new_game"]
+
+[ext_resource type="PackedScene" path="res://worlds/red_alchemist/system/display/load_game/load_game.tscn" id="6_load"]
+
+[node name="RedAlchemistDisplay" type="Control" unique_id=1071161251]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1")
+
+[node name="Background" type="ColorRect" parent="." unique_id=182237245]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.055, 0.065, 0.085, 1)
+
+[node name="Redalchemistmain" type="TextureRect" parent="." unique_id=828802191]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_0lbo5")
+expand_mode = 2
+stretch_mode = 4
+
+[node name="Margin" type="MarginContainer" parent="." unique_id=338134005]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 24
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 24
+
+[node name="Screens" type="Control" parent="Margin" unique_id=1181792860]
+layout_mode = 2
+
+[node name="StartMenu" parent="Margin/Screens" unique_id=564088884 instance=ExtResource("2")]
+layout_mode = 1
+
+[node name="NewGame" parent="Margin/Screens" instance=ExtResource("5_new_game")]
+visible = false
+layout_mode = 1
+
+[node name="LoadGame" parent="Margin/Screens" instance=ExtResource("6_load")]
+visible = false
+layout_mode = 1
+
+[node name="QuitDialog" parent="." unique_id=1850857773 instance=ExtResource("4")]
+oversampling_override = 1.0
+
+

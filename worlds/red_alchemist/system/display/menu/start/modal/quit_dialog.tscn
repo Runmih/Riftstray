@@ -1,0 +1,8 @@
+[gd_scene format=3]
+
+[node name="QuitDialog" type="ConfirmationDialog"]
+title = "Exit Red Alchemist?"
+size = Vector2i(360, 160)
+dialog_text = "Close the game?"
+ok_button_text = "Exit Game"
+cancel_button_text = "Keep Playing"

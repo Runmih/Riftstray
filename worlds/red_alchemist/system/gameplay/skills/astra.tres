@@ -1,0 +1,18 @@
+[gd_resource type="Resource" format=3 uid="uid://bbkvxgydlctnu"]
+
+[ext_resource type="Script" uid="uid://elgwjlkrmyam" path="res://worlds/red_alchemist/system/gameplay/skills/skill_definition.gd" id="1"]
+[ext_resource type="Script" uid="uid://btcmjaw7cduj0" path="res://worlds/red_alchemist/system/gameplay/battle/chances/attack_skill.gd" id="2"]
+
+[sub_resource type="Resource" id="Effect"]
+script = ExtResource("2")
+priority = 100
+strikes = 5
+damage_multiplier = 0.5
+
+[resource]
+script = ExtResource("1")
+id = &"astra"
+display_name = "Astra"
+description = "Replace an attack with five strikes at half damage. Each strike checks accuracy separately."
+attack_effect = SubResource("Effect")
+category = &"kharazad_assault"

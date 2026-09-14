@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="WorldCatalog" format=3]
+
+[ext_resource type="Script" uid="uid://b8k022sdeqxn0" path="res://core/worlds/world_catalog.gd" id="1_catalog"]
+[ext_resource type="Resource" path="res://worlds/red_alchemist/world.tres" id="2_red_alchemist"]
+[ext_resource type="Script" uid="uid://dii1dwmheg6ny" path="res://core/worlds/world_definition.gd" id="3_definition"]
+
+[resource]
+script = ExtResource("1_catalog")
+worlds = Array[ExtResource("3_definition")]([ExtResource("2_red_alchemist")])
+

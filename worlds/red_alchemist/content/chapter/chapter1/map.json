@@ -1,0 +1,28 @@
+{
+  "terrains": [
+    "res://worlds/red_alchemist/content/map/terrain/plain.tres",
+    "res://worlds/red_alchemist/content/map/terrain/road.tres",
+    "res://worlds/red_alchemist/content/map/terrain/sand.tres",
+    "res://worlds/red_alchemist/content/map/terrain/hill.tres",
+    "res://worlds/red_alchemist/content/map/terrain/mountain.tres",
+    "res://worlds/red_alchemist/content/map/terrain/watchtower.tres"
+  ],
+  "rows": [
+    "hill,plain,plain,plain,hill,plain,plain,plain,hill,plain,plain,plain,hill,plain,plain,plain",
+    "plain,plain,plain,plain,plain,plain,plain,plain,plain,plain,plain,plain,plain,plain,plain,plain",
+    "plain,plain,plain,plain,plain,plain,plain,plain,plain,plain,plain,plain,plain,plain,plain,plain",
+    "plain,plain,plain,plain,plain,plain,plain,plain,plain,plain,plain,plain,plain,plain,plain,plain",
+    "plain,plain,plain,plain,plain,plain,plain,plain,plain,plain,plain,plain,plain,plain,plain,plain",
+    "road,road,road,road,road,road,road,road,road,road,road,road,road,road,road,road",
+    "road,road,road,road,road,road,road,road,road,road,road,road,road,road,road,road",
+    "plain,plain,plain,plain,plain,plain,plain,plain,plain,plain,plain,plain,plain,plain,plain,plain",
+    "plain,plain,plain,plain,plain,plain,plain,plain,plain,plain,plain,plain,plain,plain,plain,plain",
+    "hill,plain,plain,plain,hill,plain,plain,plain,hill,plain,plain,plain,hill,plain,plain,plain"
+  ],
+  "escape_cells": [
+    [
+      15,
+      5
+    ]
+  ]
+}

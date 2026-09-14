@@ -1,0 +1,11 @@
+[gd_resource type="Resource" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://worlds/red_alchemist/system/map/terrain_definition.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+id = &"hill"
+display_name = "Hill"
+color = Color(0.259, 0.337, 0.22, 1)
+movement_costs = {&"flying": 1, &"ground": 2}
+

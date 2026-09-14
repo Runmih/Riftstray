@@ -1,0 +1,135 @@
+{
+  "opening": "res://worlds/red_alchemist/content/chapter/chapter1/opening.json",
+  "opening_completed_flag": "chapter1_opening_seen",
+  "limits": {
+    "player_turn_started": 1
+  },
+  "restrictions": [
+    {
+      "blocked_actions": [
+        "move",
+        "attack",
+        "wait",
+        "end_turn",
+        "cancel"
+      ],
+      "reminder": "res://worlds/red_alchemist/content/chapter/chapter1/dialogue/potion_reminder.json",
+      "until": {
+        "type": "item_used",
+        "unit": "mihata",
+        "item": "crimson_resolve"
+      },
+      "allowed_item": {
+        "unit": "mihata",
+        "item": "crimson_resolve"
+      }
+    }
+  ],
+  "events": [
+    {
+      "steps": [
+        {
+          "type": "refresh_phase"
+        },
+        {
+          "source": "res://worlds/red_alchemist/content/chapter/chapter1/dialogue/after_item.json",
+          "type": "dialogue"
+        }
+      ],
+      "trigger": "item_used",
+      "state_key": "event/opening_turn",
+      "id": "opening_turn",
+      "conditions": [
+        {
+          "type": "item_used",
+          "unit": "mihata",
+          "item": "crimson_resolve"
+        }
+      ]
+    },
+    {
+      "steps": [
+        {
+          "type": "reinforcement",
+          "placement": "assassin_3"
+        },
+        {
+          "source": "res://worlds/red_alchemist/content/chapter/chapter1/dialogue/arrival_north.json",
+          "type": "dialogue"
+        }
+      ],
+      "trigger": "player_turn_started",
+      "state_key": "reinforcement_north",
+      "id": "north",
+      "conditions": [
+        {
+          "type": "item_used",
+          "unit": "mihata",
+          "item": "crimson_resolve"
+        },
+        {
+          "type": "tag_position",
+          "axis": "x",
+          "minimum": 9,
+          "tag": "citizen"
+        }
+      ]
+    },
+    {
+      "steps": [
+        {
+          "type": "reinforcement",
+          "placement": "assassin_4"
+        },
+        {
+          "source": "res://worlds/red_alchemist/content/chapter/chapter1/dialogue/arrival_rear.json",
+          "type": "dialogue"
+        }
+      ],
+      "trigger": "player_turn_started",
+      "state_key": "reinforcement_rear",
+      "id": "rear",
+      "conditions": [
+        {
+          "type": "item_used",
+          "unit": "mihata",
+          "item": "crimson_resolve"
+        },
+        {
+          "type": "tag_position",
+          "axis": "x",
+          "minimum": 11,
+          "tag": "citizen"
+        }
+      ]
+    },
+    {
+      "steps": [
+        {
+          "type": "reinforcement",
+          "placement": "assassin_5"
+        },
+        {
+          "source": "res://worlds/red_alchemist/content/chapter/chapter1/dialogue/arrival_exit.json",
+          "type": "dialogue"
+        }
+      ],
+      "trigger": "player_turn_started",
+      "state_key": "reinforcement_exit",
+      "id": "exit",
+      "conditions": [
+        {
+          "type": "item_used",
+          "unit": "mihata",
+          "item": "crimson_resolve"
+        },
+        {
+          "type": "tag_position",
+          "axis": "x",
+          "minimum": 13,
+          "tag": "citizen"
+        }
+      ]
+    }
+  ]
+}

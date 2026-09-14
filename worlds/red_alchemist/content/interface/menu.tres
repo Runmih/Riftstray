@@ -1,0 +1,10 @@
+[gd_resource type="Resource" format=3 uid="uid://dy7ndumy8pjbr"]
+
+[ext_resource type="Script" uid="uid://d4aggr8uxv4tu" path="res://worlds/red_alchemist/system/display/menu/start/menu_content.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+title = "RED ALCHEMIST"
+subtitle = "A Riftstray world"
+save_notice = "Continue and Load Game will be available when save loading is connected."
+new_game_notice = "New Game is not connected to gameplay yet."
