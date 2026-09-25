@@ -1,0 +1,119 @@
+[gd_scene load_steps=12 format=3 uid="uid://caltmxghw4fgq"]
+[ext_resource type="Script" path="res://worlds/red_alchemist/display/map/map.gd" id="1"]
+[ext_resource type="Script" path="res://worlds/red_alchemist/display/map/board.gd" id="2"]
+[ext_resource type="Script" path="res://worlds/red_alchemist/display/npc/npc_layer.gd" id="4_npc"]
+[ext_resource type="Resource" path="res://worlds/red_alchemist/gameplay/attributes/default_rules.tres" id="6_rules"]
+[ext_resource type="PackedScene" path="res://worlds/red_alchemist/display/character/compact/compact.tscn" id="7_compact"]
+[ext_resource type="PackedScene" path="res://worlds/red_alchemist/display/actions/action_menu.tscn" id="Actions"]
+[ext_resource type="PackedScene" path="res://worlds/red_alchemist/display/battle_preview/forecast_panel.tscn" id="Forecast"]
+[ext_resource type="PackedScene" path="res://worlds/red_alchemist/display/inventory/modal/inventory_modal.tscn" id="Inventory"]
+[ext_resource type="PackedScene" path="res://worlds/red_alchemist/display/dialogue/dialogue_panel.tscn" id="Dialogue"]
+[ext_resource type="PackedScene" path="res://worlds/red_alchemist/display/map/weather/snowfall.tscn" id="Snow"]
+[sub_resource type="StyleBoxFlat" id="Status"]
+bg_color = Color(0.055, 0.085, 0.12, 0.88)
+content_margin_left = 14.0
+content_margin_right = 14.0
+content_margin_top = 8.0
+content_margin_bottom = 8.0
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_left = 5
+corner_radius_bottom_right = 5
+[node name="Map" type="Node2D"]
+script = ExtResource("1")
+chapter_source = "res://worlds/red_alchemist/content/chapter/chapter1/chapter.json"
+attribute_rules = ExtResource("6_rules")
+[node name="Interface" type="CanvasLayer" parent="."]
+[node name="Background" type="ColorRect" parent="Interface"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+color = Color(0.055, 0.065, 0.085, 1)
+[node name="Board" type="Control" parent="Interface"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+focus_mode = 2
+clip_contents = true
+script = ExtResource("2")
+[node name="Npcs" type="Control" parent="Interface/Board"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+script = ExtResource("4_npc")
+[node name="Snowfall" parent="Interface/Board" instance=ExtResource("Snow")]
+visible = false
+[node name="Margin" type="MarginContainer" parent="Interface"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_right = 24
+theme_override_constants/margin_top = 24
+theme_override_constants/margin_bottom = 24
+[node name="Column" type="VBoxContainer" parent="Interface/Margin"]
+alignment = 2
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 16
+[node name="Footer" type="HBoxContainer" parent="Interface/Margin/Column"]
+layout_mode = 2
+mouse_filter = 2
+[node name="TileInfo" type="Label" parent="Interface/Margin/Column/Footer"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_styles/normal = SubResource("Status")
+theme_override_font_sizes/font_size = 16
+[node name="Message" type="Label" parent="Interface/Margin/Column"]
+layout_mode = 2
+mouse_filter = 2
+size_flags_horizontal = 4
+custom_minimum_size = Vector2(300, 44)
+theme_override_styles/normal = SubResource("Status")
+theme_override_font_sizes/font_size = 17
+autowrap_mode = 3
+horizontal_alignment = 1
+[node name="WinPanel" type="PanelContainer" parent="Interface"]
+offset_left = 20.0
+offset_top = 16.0
+offset_right = 310.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("Status")
+[node name="Text" type="Label" parent="Interface/WinPanel"]
+layout_mode = 2
+custom_minimum_size = Vector2(262, 0)
+mouse_filter = 2
+autowrap_mode = 3
+theme_override_font_sizes/font_size = 14
+[node name="DefeatPanel" type="PanelContainer" parent="Interface"]
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -310.0
+offset_top = 16.0
+offset_right = -20.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("Status")
+[node name="Text" type="Label" parent="Interface/DefeatPanel"]
+layout_mode = 2
+custom_minimum_size = Vector2(262, 0)
+mouse_filter = 2
+autowrap_mode = 3
+theme_override_font_sizes/font_size = 14
+[node name="CompactCharacter" parent="Interface" instance=ExtResource("7_compact")]
+[node name="Overlay" type="Control" parent="Interface"]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 0
+[node name="ActionMenu" parent="Interface/Overlay" instance=ExtResource("Actions")]
+[node name="Forecast" parent="Interface/Overlay" instance=ExtResource("Forecast")]
+[node name="Inventory" parent="Interface/Overlay" instance=ExtResource("Inventory")]
+[node name="Dialogue" parent="Interface" instance=ExtResource("Dialogue")]
+[node name="Result" type="ConfirmationDialog" parent="."]
+ok_button_text = "Save and Return"
+cancel_button_text = "Retry"

@@ -1,7 +1,7 @@
 [gd_resource type="Resource" format=3 uid="uid://cqeedepyewkay"]
 
-[ext_resource type="Script" uid="uid://cmsu1kmleisrq" path="res://worlds/red_alchemist/system/gameplay/gear/gear_definition.gd" id="1"]
-[ext_resource type="Script" uid="uid://dmerjn53u7mwc" path="res://worlds/red_alchemist/system/gameplay/battle/chances/block_definition.gd" id="BlockScript"]
+[ext_resource type="Script" uid="uid://cmsu1kmleisrq" path="res://worlds/red_alchemist/gameplay/gear/gear_definition.gd" id="1"]
+[ext_resource type="Script" uid="uid://dmerjn53u7mwc" path="res://worlds/red_alchemist/gameplay/battle/chances/block_definition.gd" id="BlockScript"]
 
 [sub_resource type="Resource" id="Block"]
 script = ExtResource("BlockScript")

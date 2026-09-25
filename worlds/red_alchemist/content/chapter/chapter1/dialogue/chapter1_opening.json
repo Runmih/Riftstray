@@ -1,6 +1,6 @@
 {
   "speakers": {
-    "mihata": {"name": "Mihata Shirogane", "portrait": ""},
+    "mihata": {"name": "Mihata Shirogane", "portrait": "res://worlds/red_alchemist/src/character/main/mihata/avatar/03_refined.png"},
     "sophie": {"name": "Sophie", "portrait": ""},
     "enemy": {"name": "Noble Assassin", "portrait": ""}
   },

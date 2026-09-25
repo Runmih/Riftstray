@@ -1,0 +1,31 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://worlds/red_alchemist/display/end_of_content/end_of_content.gd" id="1"]
+
+[node name="EndOfContent" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource("1")
+
+[node name="Center" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Column" type="VBoxContainer" parent="Center"]
+layout_mode = 2
+theme_override_constants/separation = 24
+
+[node name="Message" type="Label" parent="Center/Column"]
+layout_mode = 2
+text = "You reached the end of the current game.
+Thank you for playing!"
+horizontal_alignment = 1
+
+[node name="Return" type="Button" parent="Center/Column"]
+custom_minimum_size = Vector2(240, 48)
+layout_mode = 2
+text = "Return to Menu"

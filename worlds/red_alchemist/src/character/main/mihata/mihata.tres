@@ -1,23 +1,38 @@
-[gd_resource type="Resource" load_steps=8 format=3]
-[ext_resource type="Script" path="res://worlds/red_alchemist/system/character/character_definition.gd" id="1"]
-[ext_resource type="Texture2D" path="res://worlds/red_alchemist/src/character/main/mihata/mihata.svg" id="2"]
-[ext_resource type="Resource" path="res://worlds/red_alchemist/system/gameplay/classes/kharazad/fighter.tres" id="3"]
-[ext_resource type="Resource" path="res://worlds/red_alchemist/content/items/iron_sword.tres" id="4"]
-[ext_resource type="Resource" path="res://worlds/red_alchemist/content/items/iron_shield.tres" id="5"]
+[gd_resource type="Resource" format=3 uid="uid://bsxb26efw886w"]
+
+[ext_resource type="Script" uid="uid://43vqtsk8ni02" path="res://worlds/red_alchemist/gameplay/character/character_definition.gd" id="1"]
+[ext_resource type="Texture2D" uid="uid://d0m8hdcpti8yp" path="res://worlds/red_alchemist/src/character/main/mihata/Sprite/03_refined/Idle/rotations/south.png" id="2"]
+[ext_resource type="Resource" uid="uid://rmil441ij47i" path="res://worlds/red_alchemist/gameplay/classes/kharazad/fighter.tres" id="3"]
+[ext_resource type="Resource" uid="uid://jpss7cu7510o" path="res://worlds/red_alchemist/content/items/iron_sword.tres" id="4"]
+[ext_resource type="Resource" uid="uid://cqeedepyewkay" path="res://worlds/red_alchemist/content/items/iron_shield.tres" id="5"]
 [ext_resource type="Resource" path="res://worlds/red_alchemist/content/items/bandage.tres" id="6"]
+[ext_resource type="Resource" path="res://worlds/red_alchemist/content/items/healing_potion.tres" id="HealingPotion"]
 [ext_resource type="Resource" path="res://worlds/red_alchemist/content/items/crimson_resolve.tres" id="Potion"]
+
 [resource]
 script = ExtResource("1")
 id = &"mihata"
 display_name = "Mihata Shirogane"
-faction = &"player"
 faction_color = Color(0.24, 0.57, 0.91, 1)
 sprite = ExtResource("2")
-base_attributes = {&"max_hp": 108, &"strength": 14, &"magic": 1, &"skill": 12, &"speed": 10, &"defense": 18, &"resistance": 3}
+base_attributes = {
+&"defense": 5,
+&"magic": 1,
+&"max_hp": 28,
+&"resistance": 3,
+&"skill": 6,
+&"speed": 5,
+&"strength": 8
+}
 default_level = 8
 level_cap = 10
 character_class = ExtResource("3")
-starting_items = Array[Resource]([ExtResource("4"), ExtResource("5"), ExtResource("6"), ExtResource("Potion")])
-starting_gear = {&"main_hand": &"iron_sword", &"off_hand": &"iron_shield"}
-selected_skills = {&"slot_1": &"brace", &"slot_2": &"intercept"}
-
+starting_items = Array[Resource]([ExtResource("4"), ExtResource("5"), ExtResource("6"), ExtResource("Potion"), ExtResource("HealingPotion")])
+starting_gear = {
+&"main_hand": &"iron_sword",
+&"off_hand": &"iron_shield"
+}
+selected_skills = {
+&"slot_1": &"brace",
+&"slot_2": &"intercept"
+}

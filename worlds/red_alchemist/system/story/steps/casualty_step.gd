@@ -10,5 +10,7 @@ func run(context: Dictionary, step: Dictionary) -> String:
 	var before: int = victim.current_hp
 	victim.current_hp = 0
 	context.group.sync_occupancy()
+	if context.has("evaluate_outcome"):
+		context.evaluate_outcome.call()
 	await context.animations.play([{"attacker": attacker.id, "defender": victim.id, "kind": &"scripted", "attack_type": &"normal", "strike": 1, "hit": true, "blocked": false, "overpowered": false, "stunned": false, "damage": before, "hp_before": before, "hp_after": 0}], context.layer, context.message)
 	return ""

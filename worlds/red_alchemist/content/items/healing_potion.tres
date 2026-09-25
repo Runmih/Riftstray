@@ -1,0 +1,14 @@
+[gd_resource type="Resource" format=3 uid="uid://dh0mcrxnxex15"]
+
+[ext_resource type="Script" uid="uid://eu6c51osfvjn" path="res://worlds/red_alchemist/gameplay/inventory/effects/heal_percentage.gd" id="Heal"]
+[ext_resource type="Script" uid="uid://6f4ciy1rgah1" path="res://worlds/red_alchemist/gameplay/inventory/item_definition.gd" id="Item"]
+
+[sub_resource type="Resource" id="Healing"]
+script = ExtResource("Heal")
+
+[resource]
+script = ExtResource("Item")
+id = &"healing_potion"
+display_name = "Healing Potion"
+description = ""
+use_effects = Array[Resource]([SubResource("Healing")])

@@ -1,4 +1,5 @@
 {
+  "weather": "snow",
   "id": "chapter1",
   "next_location": "chapter1_complete",
   "preparation": false,
@@ -9,5 +10,6 @@
   "map": "map.json",
   "placements": "placements.json",
   "objectives": "objectives.json",
-  "events": "events.json"
+  "events": "events.json",
+  "map_revision": 4
 }

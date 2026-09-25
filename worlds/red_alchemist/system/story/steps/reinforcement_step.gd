@@ -1,6 +1,6 @@
 extends RefCounted
 
-const Reinforcement = preload("res://worlds/red_alchemist/system/npc/reinforcement.gd")
+const Reinforcement = preload("res://worlds/red_alchemist/gameplay/npc/reinforcement.gd")
 
 func run(context: Dictionary, step: Dictionary) -> String:
 	var spawn: Resource = context.spawns.get(String(step.get("placement", "")))

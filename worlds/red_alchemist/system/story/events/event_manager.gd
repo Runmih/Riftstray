@@ -30,9 +30,9 @@ func _restriction(action: StringName, unit_id: StringName, item_id: StringName) 
 	for rule: Dictionary in _data.get("restrictions", []):
 		if _conditions.matches(rule.until, session):
 			continue
-		if rule.get("blocked_actions", []).has(String(action)):
+		if rule.get("blocked_actions", []).has(String(action)) and (not rule.has("unit") or String(unit_id) == String(rule.unit) or action == &"end_turn"):
 			return rule
-		if action == &"use_item" and rule.has("allowed_item"):
+		if action == &"use_item" and rule.has("allowed_item") and (not rule.has("unit") or String(unit_id) == String(rule.unit)):
 			if String(unit_id) != String(rule.allowed_item.unit) or String(item_id) != String(rule.allowed_item.item):
 				return rule
 	return {}

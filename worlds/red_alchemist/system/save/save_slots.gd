@@ -2,6 +2,8 @@ extends RefCounted
 
 const SaveFile = preload("res://worlds/red_alchemist/system/save/save_file.gd")
 const SLOT_COUNT = 6
+const State = preload("res://worlds/red_alchemist/system/save/campaign_state.gd")
+const Locations = preload("res://worlds/red_alchemist/system/chapter/campaign_locations.gd")
 
 var active_slot := 0
 var current_data: Dictionary = {}
@@ -31,7 +33,7 @@ func create_game(slot: int, difficulty: StringName, mode: StringName) -> bool:
 		last_error = "This slot is occupied. Choose an empty slot."
 		return false
 	var timestamp := int(Time.get_unix_time_from_system())
-	var data := {"difficulty": String(difficulty), "mode": String(mode), "location": "map", "story": {"chapter": "chapter1", "node": "battle", "completed_chapters": [], "flags": {}}, "created_at": timestamp, "saved_at": timestamp}
+	var data := {"difficulty": String(difficulty), "mode": String(mode), "state_version": 2, "story": {"location": Locations.initial(), "flags": {}}, "created_at": timestamp, "saved_at": timestamp}
 	if not file.save_data(data):
 		last_error = file.last_error
 		return false
@@ -47,7 +49,7 @@ func save_current(state: Dictionary = {}) -> bool:
 	var candidate := current_data.duplicate(true)
 	if not state.is_empty():
 		candidate.merge(state, true)
-		candidate["state_version"] = 1
+		candidate["state_version"] = 2
 	candidate["saved_at"] = int(Time.get_unix_time_from_system())
 	var file = _file(active_slot)
 	if not file.save_data(candidate):
@@ -71,8 +73,13 @@ func load_game(slot: int) -> bool:
 		last_error = _data_error(data)
 	if not last_error.is_empty():
 		return false
+	var codec := State.new()
+	var upgraded: Dictionary = codec.upgrade(data)
+	if not codec.last_error.is_empty():
+		last_error = codec.last_error
+		return false
 	active_slot = slot
-	current_data = data.duplicate(true)
+	current_data = upgraded
 	return true
 
 func delete_game(slot: int) -> bool:
@@ -90,9 +97,14 @@ func delete_game(slot: int) -> bool:
 	return true
 
 func _data_error(data: Dictionary) -> String:
-	if int(data.get("state_version", 0)) > 1:
+	if int(data.get("state_version", 0)) > 2:
 		return "This save needs a newer game version."
-	if not data.get("difficulty") in ["easy", "normal", "hard"] or not data.get("mode") in ["casual", "classic"] or data.get("location") != "map":
+	if not data.get("difficulty") in ["easy", "normal", "hard"] or not data.get("mode") in ["casual", "classic"]:
 		return "This save contains unsupported game data."
+	if not data.get("story") is Dictionary:
+		return "This save has no story location."
+	var story: Dictionary = State.new().clean_story(data.story)
+	if Locations.find(String(story.get("location", ""))).is_empty():
+		return "The saved story location is unavailable."
 	return ""
 

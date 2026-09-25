@@ -1,28 +1,33 @@
 {
   "terrains": [
-    "res://worlds/red_alchemist/content/map/terrain/plain.tres",
-    "res://worlds/red_alchemist/content/map/terrain/road.tres",
-    "res://worlds/red_alchemist/content/map/terrain/sand.tres",
-    "res://worlds/red_alchemist/content/map/terrain/hill.tres",
-    "res://worlds/red_alchemist/content/map/terrain/mountain.tres",
-    "res://worlds/red_alchemist/content/map/terrain/watchtower.tres"
+	"res://worlds/red_alchemist/gameplay/map/terrain/plain.tres",
+	"res://worlds/red_alchemist/gameplay/map/terrain/road.tres",
+	"res://worlds/red_alchemist/gameplay/map/terrain/hill.tres",
+	"res://worlds/red_alchemist/gameplay/map/terrain/mountain.tres",
+	"res://worlds/red_alchemist/gameplay/map/terrain/snow.tres",
+    "res://worlds/red_alchemist/gameplay/map/terrain/forest.tres"
   ],
   "rows": [
-    "hill,plain,plain,plain,hill,plain,plain,plain,hill,plain,plain,plain,hill,plain,plain,plain",
-    "plain,plain,plain,plain,plain,plain,plain,plain,plain,plain,plain,plain,plain,plain,plain,plain",
-    "plain,plain,plain,plain,plain,plain,plain,plain,plain,plain,plain,plain,plain,plain,plain,plain",
-    "plain,plain,plain,plain,plain,plain,plain,plain,plain,plain,plain,plain,plain,plain,plain,plain",
-    "plain,plain,plain,plain,plain,plain,plain,plain,plain,plain,plain,plain,plain,plain,plain,plain",
-    "road,road,road,road,road,road,road,road,road,road,road,road,road,road,road,road",
-    "road,road,road,road,road,road,road,road,road,road,road,road,road,road,road,road",
-    "plain,plain,plain,plain,plain,plain,plain,plain,plain,plain,plain,plain,plain,plain,plain,plain",
-    "plain,plain,plain,plain,plain,plain,plain,plain,plain,plain,plain,plain,plain,plain,plain,plain",
-    "hill,plain,plain,plain,hill,plain,plain,plain,hill,plain,plain,plain,hill,plain,plain,plain"
+	"mountain,mountain,mountain,mountain,hill,snow,snow,snow,snow,snow,snow,snow,snow,forest,forest,forest",
+	"mountain,mountain,mountain,hill,hill,snow,snow,snow,snow,snow,snow,snow,snow,snow,forest,forest",
+	"mountain,mountain,hill,hill,snow,snow,snow,snow,snow,snow,snow,snow,snow,snow,snow,forest",
+	"hill,hill,hill,snow,snow,snow,snow,snow,snow,snow,snow,snow,snow,snow,snow,snow",
+	"snow,snow,snow,snow,snow,snow,snow,snow,snow,snow,snow,snow,snow,snow,snow,snow",
+	"road,road,road,road,road,road,road,road,road,road,road,road,road,road,road,road",
+	"road,road,road,road,road,road,road,road,road,road,road,road,road,road,road,road",
+	"forest,snow,snow,snow,snow,snow,snow,snow,snow,snow,snow,snow,snow,snow,snow,snow",
+	"forest,forest,snow,snow,snow,snow,snow,snow,snow,snow,snow,snow,snow,snow,forest,forest",
+    "forest,forest,forest,snow,snow,snow,snow,snow,snow,snow,snow,snow,snow,forest,forest,forest"
   ],
-  "escape_cells": [
-    [
-      15,
-      5
-    ]
+  "escape_rules": [
+	{
+	  "cells": [
+		[
+		  15,
+		  5
+		]
+	  ],
+	  "tag": "citizen"
+	}
   ]
 }

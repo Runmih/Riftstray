@@ -1,14 +1,22 @@
 [gd_resource type="Resource" format=3 uid="uid://cmbdjfqgtancb"]
 
-[ext_resource type="Script" uid="uid://6f4ciy1rgah1" path="res://worlds/red_alchemist/system/gameplay/inventory/item_definition.gd" id="1"]
-[ext_resource type="Script" uid="uid://b6k2yexyrcy7s" path="res://worlds/red_alchemist/system/gameplay/inventory/effects/crimson_resolve.gd" id="2"]
+[ext_resource type="Script" uid="uid://drog7efq5n7yg" path="res://worlds/red_alchemist/gameplay/inventory/effects/extra_actions.gd" id="Actions"]
+[ext_resource type="Script" uid="uid://8u7iqrj223ea" path="res://worlds/red_alchemist/gameplay/inventory/effects/reduce_maximum_hp.gd" id="Hp"]
+[ext_resource type="Script" uid="uid://6f4ciy1rgah1" path="res://worlds/red_alchemist/gameplay/inventory/item_definition.gd" id="Item"]
+[ext_resource type="Script" uid="uid://c8hf25g2rq04a" path="res://worlds/red_alchemist/gameplay/inventory/effects/extra_movement.gd" id="Movement"]
 
-[sub_resource type="Resource" id="Effect"]
-script = ExtResource("2")
+[sub_resource type="Resource" id="HpCost"]
+script = ExtResource("Hp")
+
+[sub_resource type="Resource" id="ActionBonus"]
+script = ExtResource("Actions")
+
+[sub_resource type="Resource" id="MovementBonus"]
+script = ExtResource("Movement")
 
 [resource]
-script = ExtResource("1")
+script = ExtResource("Item")
 id = &"crimson_resolve"
 display_name = "Crimson Resolve"
-description = "Mihata's unique potion. Sacrifice 25% maximum HP permanently for power during this battle."
-use_effect = SubResource("Effect")
+description = "Power at the cost of lasting vitality."
+use_effects = Array[Resource]([SubResource("HpCost"), SubResource("ActionBonus"), SubResource("MovementBonus")])

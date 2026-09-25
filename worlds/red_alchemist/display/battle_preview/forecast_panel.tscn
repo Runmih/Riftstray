@@ -1,0 +1,31 @@
+[gd_scene load_steps=2 format=3]
+[ext_resource type="Script" path="res://worlds/red_alchemist/display/battle_preview/forecast_panel.gd" id="1"]
+[node name="Forecast" type="PanelContainer"]
+visible = false
+custom_minimum_size = Vector2(620, 0)
+script = ExtResource("1")
+[node name="Column" type="VBoxContainer" parent="."]
+layout_mode = 2
+theme_override_constants/separation = 12
+[node name="Scroll" type="ScrollContainer" parent="Column"]
+layout_mode = 2
+custom_minimum_size = Vector2(620, 290)
+horizontal_scroll_mode = 0
+[node name="Body" type="VBoxContainer" parent="Column/Scroll"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 12
+[node name="Explanation" type="Label" parent="Column"]
+layout_mode = 2
+autowrap_mode = 3
+text = "White HP: loss from one normal hit without a block. Later strikes require survival and no stun."
+[node name="Buttons" type="HBoxContainer" parent="Column"]
+layout_mode = 2
+[node name="Attack" type="Button" parent="Column/Buttons"]
+layout_mode = 2
+custom_minimum_size = Vector2(180, 44)
+text = "Attack"
+[node name="Cancel" type="Button" parent="Column/Buttons"]
+layout_mode = 2
+custom_minimum_size = Vector2(180, 44)
+text = "Cancel"

@@ -1,0 +1,15 @@
+[gd_resource type="Resource" format=3 uid="uid://iha2u20msnt"]
+
+[ext_resource type="Script" uid="uid://uhstylh32mrx" path="res://worlds/red_alchemist/gameplay/attributes/attribute_rules.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+gain_per_point = {
+&"defense": 1,
+&"magic": 1,
+&"max_hp": 1,
+&"resistance": 1,
+&"skill": 1,
+&"speed": 1,
+&"strength": 1
+}

@@ -1,0 +1,31 @@
+[gd_resource type="Resource" load_steps=7 format=3]
+
+[ext_resource type="Script" path="res://worlds/red_alchemist/gameplay/npc/npc_definition.gd" id="1"]
+[ext_resource type="Texture2D" path="res://worlds/red_alchemist/src/character/kharazad/fighter/sword/sprite_male/south.png" id="2"]
+
+[ext_resource type="Resource" path="res://worlds/red_alchemist/gameplay/classes/kharazad/fighter.tres" id="3_class"]
+
+[ext_resource type="Resource" path="res://worlds/red_alchemist/content/items/iron_sword.tres" id="4_sword"]
+[ext_resource type="Resource" path="res://worlds/red_alchemist/content/items/iron_shield.tres" id="5_shield"]
+
+[ext_resource type="Texture2D" path="res://worlds/red_alchemist/src/character/kharazad/fighter/sword/sprite_female/south.png" id="Female"]
+
+[resource]
+script = ExtResource("1")
+id = &"kharazad_fighter"
+display_name = "Kharazad Fighter"
+nation = &"kharazad"
+faction = &"enemy"
+faction_color = Color(0.8, 0.23, 0.26, 1)
+sprite = ExtResource("2")
+base_attributes = {&"max_hp": 18, &"strength": 6, &"magic": 0, &"skill": 5, &"speed": 4, &"defense": 5, &"resistance": 2}
+growth_priorities = Array[StringName]([&"max_hp", &"strength", &"skill", &"defense", &"max_hp", &"strength", &"speed", &"resistance"])
+movement_profile = &"ground"
+character_class = ExtResource("3_class")
+
+
+starting_items = Array[Resource]([ExtResource("4_sword"), ExtResource("5_shield")])
+starting_gear = {&"main_hand": &"iron_sword", &"off_hand": &"iron_shield"}
+
+
+gender_sprites = {&"male": ExtResource("2"), &"female": ExtResource("Female")}

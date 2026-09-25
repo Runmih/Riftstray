@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3]
+[ext_resource type="PackedScene" path="res://worlds/red_alchemist/display/battle_preview/forecast_side.tscn" id="1"]
+[node name="Pair" type="HBoxContainer"]
+size_flags_horizontal = 3
+theme_override_constants/separation = 24
+[node name="Attacker" parent="." instance=ExtResource("1")]
+layout_mode = 2
+[node name="Defender" parent="." instance=ExtResource("1")]
+layout_mode = 2

@@ -1,0 +1,13 @@
+[gd_resource type="Resource" format=3 uid="uid://rmil441ij47i"]
+
+[ext_resource type="Script" uid="uid://c80v3lmmshryk" path="res://worlds/red_alchemist/gameplay/classes/class_definition.gd" id="1"]
+[ext_resource type="Resource" uid="uid://cge722exfkln5" path="res://worlds/red_alchemist/gameplay/skills/families/fighter.tres" id="2"]
+
+[resource]
+script = ExtResource("1")
+id = &"kharazad_fighter"
+display_name = "Fighter"
+gain_per_point = {
+&"max_hp": 3
+}
+skill_family = ExtResource("2")

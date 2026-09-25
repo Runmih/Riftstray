@@ -1,13 +1,13 @@
 extends RefCounted
 
-const MapDefinition = preload("res://worlds/red_alchemist/system/map/map_definition.gd")
-const Spawn = preload("res://worlds/red_alchemist/system/npc/npc_spawn.gd")
-const Win = preload("res://worlds/red_alchemist/system/gameplay/win/win_manager.gd")
-const Defeat = preload("res://worlds/red_alchemist/system/gameplay/defeat/defeat_manager.gd")
-const CitizenCount = preload("res://worlds/red_alchemist/system/gameplay/conditions/checks/citizen_count.gd")
-const UnitDead = preload("res://worlds/red_alchemist/system/gameplay/conditions/checks/unit_dead.gd")
-const ReachDestination = preload("res://worlds/red_alchemist/system/npc/behavior/reach_destination.gd")
-const HuntTarget = preload("res://worlds/red_alchemist/system/npc/behavior/hunt_target.gd")
+const MapDefinition = preload("res://worlds/red_alchemist/gameplay/map/map_definition.gd")
+const Spawn = preload("res://worlds/red_alchemist/gameplay/npc/npc_spawn.gd")
+const Win = preload("res://worlds/red_alchemist/gameplay/win/win_manager.gd")
+const Defeat = preload("res://worlds/red_alchemist/gameplay/defeat/defeat_manager.gd")
+const CitizenCount = preload("res://worlds/red_alchemist/gameplay/conditions/checks/citizen_count.gd")
+const UnitDead = preload("res://worlds/red_alchemist/gameplay/conditions/checks/unit_dead.gd")
+const ReachDestination = preload("res://worlds/red_alchemist/gameplay/npc/behavior/reach_destination.gd")
+const HuntTarget = preload("res://worlds/red_alchemist/gameplay/npc/behavior/hunt_target.gd")
 var last_error: String = ""
 
 func read(path: String) -> Dictionary:
@@ -35,6 +35,8 @@ func placements(data: Dictionary) -> Dictionary:
 		var spawn := Spawn.new()
 		spawn.id = StringName(entry.id)
 		spawn.template = load(String(entry.template))
+		spawn.gender = StringName(entry.get("gender", ""))
+		spawn.display_name = String(entry.get("display_name", ""))
 		spawn.level = int(entry.get("level", 0))
 		spawn.cell = cell(entry.cell)
 		var behavior: Dictionary = entry.get("behavior", {})

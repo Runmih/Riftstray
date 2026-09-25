@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://c0bxnb1po1q3c"]
+
+[ext_resource type="PackedScene" path="res://worlds/red_alchemist/display/inventory/modal/inventory_modal.tscn" id="1"]
+
+[node name="ItemMenu" unique_id=1383277929 instance=ExtResource("1")]
+anchors_preset = 11

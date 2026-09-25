@@ -1,34 +1,34 @@
 {
   "win": {
-    "require_all": true,
-    "checks": [
-      {
-        "threshold": 0,
-        "comparison": "==",
-        "state": "remaining",
-        "type": "citizen_count"
-      },
-      {
-        "threshold": 3,
-        "comparison": ">=",
-        "state": "escaped",
-        "type": "citizen_count"
-      }
-    ]
+	"require_all": true,
+	"checks": [
+	  {
+		"threshold": 0,
+		"comparison": "==",
+		"state": "remaining",
+		"type": "citizen_count"
+	  },
+	  {
+		"threshold": 3,
+		"comparison": ">=",
+		"state": "escaped",
+		"type": "citizen_count"
+	  }
+	]
   },
   "defeat": {
-    "require_all": false,
-    "checks": [
-      {
-        "unit_id": "mihata",
-        "type": "unit_dead"
-      },
-      {
-        "threshold": 4,
-        "comparison": ">=",
-        "state": "dead",
-        "type": "citizen_count"
-      }
-    ]
+	"require_all": false,
+	"checks": [
+	  {
+		"unit_id": "mihata",
+		"type": "unit_dead"
+	  },
+	  {
+		"threshold": 4,
+		"comparison": ">=",
+		"state": "dead",
+		"type": "citizen_count"
+	  }
+	]
   }
 }

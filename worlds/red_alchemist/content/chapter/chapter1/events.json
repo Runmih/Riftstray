@@ -10,8 +10,7 @@
         "move",
         "attack",
         "wait",
-        "end_turn",
-        "cancel"
+        "end_turn"
       ],
       "reminder": "res://worlds/red_alchemist/content/chapter/chapter1/dialogue/potion_reminder.json",
       "until": {
@@ -22,7 +21,8 @@
       "allowed_item": {
         "unit": "mihata",
         "item": "crimson_resolve"
-      }
+      },
+      "unit": "mihata"
     }
   ],
   "events": [

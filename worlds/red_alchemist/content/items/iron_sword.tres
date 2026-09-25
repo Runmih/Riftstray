@@ -1,7 +1,7 @@
 [gd_resource type="Resource" format=3 uid="uid://jpss7cu7510o"]
 
-[ext_resource type="Script" uid="uid://cmsu1kmleisrq" path="res://worlds/red_alchemist/system/gameplay/gear/gear_definition.gd" id="1"]
-[ext_resource type="Script" uid="uid://bpopbhl26kdjt" path="res://worlds/red_alchemist/system/gameplay/battle/attack_definition.gd" id="AttackScript"]
+[ext_resource type="Script" uid="uid://cmsu1kmleisrq" path="res://worlds/red_alchemist/gameplay/gear/gear_definition.gd" id="1"]
+[ext_resource type="Script" uid="uid://bpopbhl26kdjt" path="res://worlds/red_alchemist/gameplay/battle/attack_definition.gd" id="AttackScript"]
 
 [sub_resource type="Resource" id="Attack"]
 script = ExtResource("AttackScript")

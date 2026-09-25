@@ -1,4 +1,4 @@
 {
-  "speakers": {"mihata": {"name": "Mihata Shirogane", "portrait": ""}},
+  "speakers": {"mihata": {"name": "Mihata Shirogane", "portrait": "res://worlds/red_alchemist/src/character/main/mihata/avatar/03_refined.png"}},
   "lines": [{"speaker": "mihata", "text": "I can't reach them like this. I need Crimson Resolve. The potion... now."}]
 }

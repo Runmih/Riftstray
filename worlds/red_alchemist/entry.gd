@@ -3,8 +3,11 @@ extends Control
 signal return_to_shell
 
 const SaveSlots = preload("res://worlds/red_alchemist/system/save/save_slots.gd")
-const MapScene = preload("res://worlds/red_alchemist/system/display/map/map.tscn")
+const MapScene = preload("res://worlds/red_alchemist/display/map/map.tscn")
 
+const Locations = preload("res://worlds/red_alchemist/system/chapter/campaign_locations.gd")
+const EndScreen = preload("res://worlds/red_alchemist/display/end_of_content/end_of_content.tscn")
+var end_screen: Control
 var saves = SaveSlots.new()
 var map_screen: Node2D
 var error_dialog: AcceptDialog
@@ -40,8 +43,17 @@ func _create_game(slot: int, difficulty: StringName, mode: StringName) -> void:
 		_show_save_error()
 
 func _open_map() -> void:
+	var route: Dictionary = Locations.find(String(saves.current_data.story.location))
+	if route.get("type") == "end_of_content":
+		_show_end_screen()
+		return
+	if route.get("type") != "chapter":
+		saves.last_error = "The saved location is unavailable."
+		_show_save_error()
+		return
 	$Display.hide()
 	map_screen = MapScene.instantiate()
+	map_screen.chapter_source = String(route.source)
 	map_screen.saved_campaign = saves.current_data.duplicate(true)
 	add_child(map_screen)
 	if not map_screen.load_error.is_empty():
@@ -64,7 +76,10 @@ func _save_and_return() -> void:
 	remove_child(map_screen)
 	map_screen.queue_free()
 	map_screen = null
-	$Display.show_start()
+	if Locations.find(String(saves.current_data.story.location)).get("type") == "end_of_content":
+		_show_end_screen()
+	else:
+		$Display.show_start()
 
 func _show_save_error() -> void:
 	error_dialog.dialog_text = saves.last_error
@@ -95,3 +110,16 @@ func _delete_game(slot: int) -> void:
 		_restore_focus()
 
 
+
+func _show_end_screen() -> void:
+	$Display.hide()
+	end_screen = EndScreen.instantiate()
+	end_screen.return_requested.connect(_return_from_end)
+	add_child(end_screen)
+
+func _return_from_end() -> void:
+	if end_screen != null:
+		remove_child(end_screen)
+		end_screen.queue_free()
+		end_screen = null
+	$Display.show_start()

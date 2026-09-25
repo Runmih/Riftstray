@@ -20,5 +20,7 @@ func run(context: Dictionary, step: Dictionary) -> String:
 	await context.walk.play(view, context.board, path, seconds)
 	unit.cell = destination
 	context.group.sync_occupancy()
+	if context.has("moved"):
+		context.moved.call(unit)
 	context.layer.refresh()
 	return ""

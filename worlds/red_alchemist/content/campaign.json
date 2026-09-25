@@ -1,0 +1,7 @@
+{
+  "start": "chapter1",
+  "locations": {
+    "chapter1": {"type": "chapter", "source": "res://worlds/red_alchemist/content/chapter/chapter1/chapter.json"},
+    "chapter1_complete": {"type": "end_of_content"}
+  }
+}

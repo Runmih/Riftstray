@@ -1,7 +1,7 @@
 {
   "speakers": {
     "mihata": {
-      "portrait": "",
+      "portrait": "res://worlds/red_alchemist/src/character/main/mihata/avatar/03_refined.png",
       "name": "Mihata Shirogane"
     }
   },

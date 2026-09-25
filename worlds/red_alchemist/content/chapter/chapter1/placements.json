@@ -1,186 +1,206 @@
 {
   "units": [
-    {
-      "id": "mihata",
-      "template": "res://worlds/red_alchemist/src/character/main/mihata/mihata.tres",
-      "level": 0,
-      "cell": [
-        5,
-        4
-      ],
-      "initial": true
-    },
-    {
-      "id": "sophie",
-      "template": "res://worlds/red_alchemist/src/character/sophie/sophie.tres",
-      "level": 0,
-      "cell": [
-        7,
-        4
-      ],
-      "initial": true,
-      "behavior": {
-        "destination": [
-          15,
-          5
-        ],
-        "type": "reach_destination"
-      }
-    },
-    {
-      "id": "courtesan_2",
-      "template": "res://worlds/red_alchemist/system/npc/courtesan/courtesan.tres",
-      "level": 0,
-      "cell": [
-        6,
-        5
-      ],
-      "initial": true,
-      "behavior": {
-        "destination": [
-          15,
-          5
-        ],
-        "type": "reach_destination"
-      }
-    },
-    {
-      "id": "courtesan_3",
-      "template": "res://worlds/red_alchemist/system/npc/courtesan/courtesan.tres",
-      "level": 0,
-      "cell": [
-        6,
-        6
-      ],
-      "initial": true,
-      "behavior": {
-        "destination": [
-          15,
-          5
-        ],
-        "type": "reach_destination"
-      }
-    },
-    {
-      "id": "courtesan_4",
-      "template": "res://worlds/red_alchemist/system/npc/courtesan/courtesan.tres",
-      "level": 0,
-      "cell": [
-        5,
-        6
-      ],
-      "initial": true,
-      "behavior": {
-        "destination": [
-          15,
-          5
-        ],
-        "type": "reach_destination"
-      }
-    },
-    {
-      "id": "courtesan_5",
-      "template": "res://worlds/red_alchemist/system/npc/courtesan/courtesan.tres",
-      "level": 0,
-      "cell": [
-        5,
-        7
-      ],
-      "initial": true,
-      "behavior": {
-        "destination": [
-          15,
-          5
-        ],
-        "type": "reach_destination"
-      }
-    },
-    {
-      "id": "courtesan_6",
-      "template": "res://worlds/red_alchemist/system/npc/courtesan/courtesan.tres",
-      "level": 0,
-      "cell": [
-        4,
-        5
-      ],
-      "initial": true,
-      "behavior": {
-        "destination": [
-          15,
-          5
-        ],
-        "type": "reach_destination"
-      }
-    },
-    {
-      "id": "assassin_1",
-      "template": "res://worlds/red_alchemist/system/npc/kharazad/assassin/assassin.tres",
-      "level": 0,
-      "cell": [
-        3,
-        5
-      ],
-      "initial": true,
-      "behavior": {
-        "target_id": "courtesan_4",
-        "type": "hunt_target"
-      }
-    },
-    {
-      "id": "assassin_2",
-      "template": "res://worlds/red_alchemist/system/npc/kharazad/assassin/assassin.tres",
-      "level": 0,
-      "cell": [
-        8,
-        3
-      ],
-      "initial": true,
-      "behavior": {
-        "target_id": "sophie",
-        "type": "hunt_target"
-      }
-    },
-    {
-      "id": "assassin_3",
-      "template": "res://worlds/red_alchemist/system/npc/kharazad/assassin/assassin.tres",
-      "level": 0,
-      "cell": [
-        10,
-        2
-      ],
-      "initial": false,
-      "behavior": {
-        "target_id": "sophie",
-        "type": "hunt_target"
-      }
-    },
-    {
-      "id": "assassin_4",
-      "template": "res://worlds/red_alchemist/system/npc/kharazad/assassin/assassin.tres",
-      "level": 0,
-      "cell": [
-        8,
-        8
-      ],
-      "initial": false,
-      "behavior": {
-        "target_id": "courtesan_4",
-        "type": "hunt_target"
-      }
-    },
-    {
-      "id": "assassin_5",
-      "template": "res://worlds/red_alchemist/system/npc/kharazad/assassin/assassin.tres",
-      "level": 0,
-      "cell": [
-        15,
-        3
-      ],
-      "initial": false,
-      "behavior": {
-        "target_id": "courtesan_5",
-        "type": "hunt_target"
-      }
-    }
+	{
+	  "id": "mihata",
+	  "template": "res://worlds/red_alchemist/src/character/main/mihata/mihata.tres",
+	  "level": 0,
+	  "cell": [
+		5,
+		4
+	  ],
+	  "initial": true
+	},
+	{
+	  "id": "sophie",
+	  "template": "res://worlds/red_alchemist/src/character/main/sophie/sophie.tres",
+	  "level": 0,
+	  "cell": [
+		7,
+		4
+	  ],
+	  "initial": true,
+	  "behavior": {
+		"destination": [
+		  15,
+		  5
+		],
+		"type": "reach_destination"
+	  }
+	},
+	{
+	  "id": "courtesan_2",
+	  "template": "res://worlds/red_alchemist/gameplay/npc/courtesan/courtesan.tres",
+	  "level": 0,
+	  "cell": [
+		6,
+		5
+	  ],
+	  "initial": true,
+	  "behavior": {
+		"destination": [
+		  15,
+		  5
+		],
+		"type": "reach_destination"
+	  },
+	  "gender": "female",
+	  "display_name": "Courtesan"
+	},
+	{
+	  "id": "courtesan_3",
+	  "template": "res://worlds/red_alchemist/gameplay/npc/courtesan/courtesan.tres",
+	  "level": 0,
+	  "cell": [
+		6,
+		6
+	  ],
+	  "initial": true,
+	  "behavior": {
+		"destination": [
+		  15,
+		  5
+		],
+		"type": "reach_destination"
+	  },
+	  "gender": "female",
+	  "display_name": "Courtesan"
+	},
+	{
+	  "id": "courtesan_4",
+	  "template": "res://worlds/red_alchemist/gameplay/npc/courtesan/courtesan.tres",
+	  "level": 0,
+	  "cell": [
+		5,
+		6
+	  ],
+	  "initial": true,
+	  "behavior": {
+		"destination": [
+		  15,
+		  5
+		],
+		"type": "reach_destination"
+	  },
+	  "gender": "female",
+	  "display_name": "Courtesan"
+	},
+	{
+	  "id": "courtesan_5",
+	  "template": "res://worlds/red_alchemist/gameplay/npc/courtesan/courtesan.tres",
+	  "level": 0,
+	  "cell": [
+		5,
+		7
+	  ],
+	  "initial": true,
+	  "behavior": {
+		"destination": [
+		  15,
+		  5
+		],
+		"type": "reach_destination"
+	  },
+	  "gender": "female",
+	  "display_name": "Courtesan"
+	},
+	{
+	  "id": "courtesan_6",
+	  "template": "res://worlds/red_alchemist/gameplay/npc/courtesan/courtesan.tres",
+	  "level": 0,
+	  "cell": [
+		4,
+		5
+	  ],
+	  "initial": true,
+	  "behavior": {
+		"destination": [
+		  15,
+		  5
+		],
+		"type": "reach_destination"
+	  },
+	  "gender": "female",
+	  "display_name": "Courtesan"
+	},
+	{
+	  "id": "assassin_1",
+	  "template": "res://worlds/red_alchemist/gameplay/npc/kharazad/fighter/fighter.tres",
+	  "level": 0,
+	  "cell": [
+		3,
+		5
+	  ],
+	  "initial": true,
+	  "behavior": {
+		"target_id": "courtesan_4",
+		"type": "hunt_target"
+	  },
+	  "gender": "male",
+	  "display_name": "Assassin"
+	},
+	{
+	  "id": "assassin_2",
+	  "template": "res://worlds/red_alchemist/gameplay/npc/kharazad/fighter/fighter.tres",
+	  "level": 0,
+	  "cell": [
+		8,
+		3
+	  ],
+	  "initial": true,
+	  "behavior": {
+		"target_id": "sophie",
+		"type": "hunt_target"
+	  },
+	  "gender": "female",
+	  "display_name": "Assassin"
+	},
+	{
+	  "id": "assassin_3",
+	  "template": "res://worlds/red_alchemist/gameplay/npc/kharazad/fighter/fighter.tres",
+	  "level": 0,
+	  "cell": [
+		10,
+		2
+	  ],
+	  "initial": false,
+	  "behavior": {
+		"target_id": "sophie",
+		"type": "hunt_target"
+	  },
+	  "gender": "male",
+	  "display_name": "Assassin"
+	},
+	{
+	  "id": "assassin_4",
+	  "template": "res://worlds/red_alchemist/gameplay/npc/kharazad/fighter/fighter.tres",
+	  "level": 0,
+	  "cell": [
+		8,
+		8
+	  ],
+	  "initial": false,
+	  "behavior": {
+		"target_id": "courtesan_4",
+		"type": "hunt_target"
+	  },
+	  "gender": "female",
+	  "display_name": "Assassin"
+	},
+	{
+	  "id": "assassin_5",
+	  "template": "res://worlds/red_alchemist/gameplay/npc/kharazad/fighter/fighter.tres",
+	  "level": 0,
+	  "cell": [
+		15,
+		3
+	  ],
+	  "initial": false,
+	  "behavior": {
+		"target_id": "courtesan_5",
+		"type": "hunt_target"
+	  },
+	  "gender": "male",
+	  "display_name": "Assassin"
+	}
   ]
 }
